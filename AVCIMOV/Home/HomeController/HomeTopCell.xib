@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="topCell" id="gTV-IL-0wX" customClass="HomeTopCell" customModule="AVCIMOV" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="176" height="228"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="176" height="228"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAy-Jf-fhn">
+                        <rect key="frame" x="0.0" y="0.0" width="176" height="228"/>
+                        <color key="backgroundColor" name="bgColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="228" id="1FV-cz-482"/>
+                        </constraints>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1917img" translatesAutoresizingMaskIntoConstraints="NO" id="m4v-uw-QJ2">
+                        <rect key="frame" x="32" y="0.0" width="144" height="210"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="144" id="jcw-SZ-v4f"/>
+                            <constraint firstAttribute="height" constant="210" id="xq0-g8-UZJ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIE-nh-H9c" customClass="UIOutlinedLabel" customModule="AVCIMOV" customModuleProvider="target">
+                        <rect key="frame" x="12" y="140" width="96" height="88"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="88" id="MbF-UL-HS4"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="90"/>
+                        <color key="textColor" name="bgColor"/>
+                        <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <size key="shadowOffset" width="1" height="1"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="m4v-uw-QJ2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="32" id="2QL-jD-LXP"/>
+                <constraint firstItem="BAy-Jf-fhn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3yZ-J8-F4P"/>
+                <constraint firstAttribute="trailing" secondItem="BAy-Jf-fhn" secondAttribute="trailing" id="Bsa-N3-YnV"/>
+                <constraint firstItem="BAy-Jf-fhn" firstAttribute="bottom" secondItem="YIE-nh-H9c" secondAttribute="bottom" id="HKD-C7-Zq5"/>
+                <constraint firstItem="m4v-uw-QJ2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="IjD-71-4gT"/>
+                <constraint firstAttribute="bottom" secondItem="m4v-uw-QJ2" secondAttribute="bottom" constant="18" id="Y5l-sM-J0v"/>
+                <constraint firstItem="YIE-nh-H9c" firstAttribute="leading" secondItem="m4v-uw-QJ2" secondAttribute="leading" constant="-20" id="b5g-wg-Ega"/>
+                <constraint firstAttribute="bottom" secondItem="BAy-Jf-fhn" secondAttribute="bottom" id="ilt-q2-G1M"/>
+                <constraint firstAttribute="trailing" secondItem="m4v-uw-QJ2" secondAttribute="trailing" id="pGT-Ts-cok"/>
+                <constraint firstItem="BAy-Jf-fhn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="x0V-wA-TSE"/>
+            </constraints>
+            <size key="customSize" width="335.33333333333337" height="373"/>
+            <connections>
+                <outlet property="cellView" destination="BAy-Jf-fhn" id="g3s-zG-0W3"/>
+                <outlet property="imageView" destination="m4v-uw-QJ2" id="8cB-ky-p4R"/>
+                <outlet property="textLabel" destination="YIE-nh-H9c" id="pOw-QG-O9Z"/>
+            </connections>
+            <point key="canvasLocation" x="109.9236641221374" y="101.40845070422536"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="1917img" width="600" height="865"/>
+        <namedColor name="bgColor">
+            <color red="0.14100000262260437" green="0.16500000655651093" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
