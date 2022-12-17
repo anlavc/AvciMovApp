@@ -30,7 +30,7 @@
                             <constraint firstAttribute="height" constant="228" id="1FV-cz-482"/>
                         </constraints>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1917img" translatesAutoresizingMaskIntoConstraints="NO" id="m4v-uw-QJ2">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1917img" translatesAutoresizingMaskIntoConstraints="NO" id="m4v-uw-QJ2">
                         <rect key="frame" x="32" y="0.0" width="144" height="210"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="144" id="jcw-SZ-v4f"/>

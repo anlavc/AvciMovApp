@@ -35,7 +35,11 @@ class HomeTopCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
     }
+    func configureCell(item: ResultMovie) {
   
+        let image = NetworkHelper.shared.baseBackImageUrl + item.backdrop_path!
+        self.imageView.kf.setImage(with: URL(string: image))
+    }
 
 }
 

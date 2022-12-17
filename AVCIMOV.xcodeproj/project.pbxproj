@@ -25,6 +25,7 @@
 		EE82D528294E37BD00113931 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE82D51B294E37BD00113931 /* DetailModel.swift */; };
 		EE82D52B294E3AF100113931 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE82D52A294E3AF000113931 /* SearchVM.swift */; };
 		EE82D52E294E3D1200113931 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EE82D52D294E3D1200113931 /* Kingfisher */; };
+		EE82D532294E644500113931 /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE82D531294E644500113931 /* MainVM.swift */; };
 		EEA4D965294BA7F400C7151F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA4D964294BA7F400C7151F /* DetailsViewController.swift */; };
 		EEA4D968294BBA3F00C7151F /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA4D966294BBA3F00C7151F /* DetailCell.swift */; };
 		EEA4D969294BBA3F00C7151F /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA4D967294BBA3F00C7151F /* DetailCell.xib */; };
@@ -94,6 +95,7 @@
 		EE82D51A294E37BD00113931 /* MainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		EE82D51B294E37BD00113931 /* DetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		EE82D52A294E3AF000113931 /* SearchVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
+		EE82D531294E644500113931 /* MainVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
 		EEA4D964294BA7F400C7151F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		EEA4D966294BBA3F00C7151F /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		EEA4D967294BBA3F00C7151F /* DetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 		EEB78A7B294B117E0027CED0 /* HomeController */ = {
 			isa = PBXGroup;
 			children = (
+				EE82D531294E644500113931 /* MainVM.swift */,
 				EED7A57A2947B52600231C44 /* HomeTopCell.xib */,
 				EED7A5822947C14700231C44 /* HomeVC.swift */,
 				EED7A5842947C44B00231C44 /* HomeTopCell.swift */,
@@ -608,6 +611,7 @@
 				EE82D51C294E37BD00113931 /* NetworkHelper.swift in Sources */,
 				EEB78A89294B3D9B0027CED0 /* ImageRadius.swift in Sources */,
 				EEA4D968294BBA3F00C7151F /* DetailCell.swift in Sources */,
+				EE82D532294E644500113931 /* MainVM.swift in Sources */,
 				EEFF9813294A5DEE00F20AA7 /* TopRatedVC.swift in Sources */,
 				EEB78A86294B13AC0027CED0 /* SearchTableViewCell.swift in Sources */,
 				EE82D524294E37BD00113931 /* TopRatedManager.swift in Sources */,

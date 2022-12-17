@@ -10,7 +10,7 @@ import UIKit
 class HomeVC: UIViewController {
     var imageArray:[String] = ["1917img","ayla","duneposter","ersan","fury","holmes","thor"]
     var numberArray:[String]=["1","2","3","4","5","6","7"]
-    
+    let topCell = "HomeTopCell"
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -60,6 +60,7 @@ class HomeVC: UIViewController {
     }
     
     private func setupUI() {
+        navigationItem.title = "What do you want to watch?"
         collectionView.delegate = self
         collectionView.dataSource = self
         segmentedControl.selectedSegmentIndex = 0
@@ -67,13 +68,19 @@ class HomeVC: UIViewController {
         self.container3.alpha = 0
         self.container4.alpha = 0
         
-        let nibCell=UINib(nibName: "HomeTopCell", bundle: nil)
+        let nibCell=UINib(nibName: topCell, bundle: nil)
         collectionView.register(nibCell, forCellWithReuseIdentifier: "topCell")
         
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
             layout.collectionView?.showsVerticalScrollIndicator = false
             layout.collectionView?.showsHorizontalScrollIndicator = false
+        }
+        MainVM.shared.delegate = self
+        MainVM.shared.getTopRated{ errorMessage in
+            if let errorMessage = errorMessage {
+                print("error \(errorMessage)")
+            }
         }
     }
     
@@ -88,16 +95,42 @@ class HomeVC: UIViewController {
 //MARK: - CollectionViewDelegate
 
 
-extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArray.count
+        return MainVM.shared.topRated.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topCell", for: indexPath) as! HomeTopCell
-        cell.imageView.image = UIImage(named: imageArray[indexPath.row])
-        cell.textLabel.text = numberArray[indexPath.row]
+        let item = MainVM.shared.topRated[indexPath.item]
+        cell.configureCell(item: item)
+        cell.textLabel.text = "\(indexPath.item + 1) "
+//        cell.imageView.image = UIImage(named: imageArray[indexPath.row])
+//        cell.textLabel.text = numberArray[indexPath.row]
+        
         return cell
     }
-
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        let offsetX = scrollView.contentOffset.x
+        let contentWidth = scrollView.contentSize.width
+        let width = scrollView.frame.size.width
+        
+        if offsetX >= contentWidth - (3 * width) {
+            MainVM.shared.getTopRated{ errorMessage in
+                if let errorMessage = errorMessage {
+                    print("error \(errorMessage)")
+                }
+            }
+        }
+    }
+}
+extension HomeVC: MainVMDelegate {
+    func didGetTopRated(isDone: Bool) {
+        if isDone {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
 }

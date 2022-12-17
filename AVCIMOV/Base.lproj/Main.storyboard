@@ -362,7 +362,7 @@
             </objects>
             <point key="canvasLocation" x="2432.8244274809158" y="986.61971830985919"/>
         </scene>
-        <!--What do you want tı watch?-->
+        <!--HomeVC-->
         <scene sceneID="Kkq-7P-3n5">
             <objects>
                 <viewController id="end-8A-cbU" customClass="HomeVC" customModule="AVCIMOV" customModuleProvider="target" sceneMemberID="viewController">
@@ -499,7 +499,7 @@
                             <constraint firstItem="CYG-az-OLh" firstAttribute="bottom" secondItem="HSZ-ay-18s" secondAttribute="bottom" id="s84-gN-o2T"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="What do you want tı watch?" id="GtQ-QM-j6b" userLabel="NavigationItem">
+                    <navigationItem key="navigationItem" id="GtQ-QM-j6b" userLabel="NavigationItem">
                         <barButtonItem key="rightBarButtonItem" title="Detay" image="square.and.arrow.up" catalog="system" id="tiw-87-Svb">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>

@@ -19,7 +19,7 @@ class SearchTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
      setupUI()
-        
+      
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,10 +33,10 @@ class SearchTableViewCell: UITableViewCell {
         self.imageview.kf.setImage(with: URL(string: image))
         self.headLabel.text = item.title
         self.pointLabel.text = "\(item.vote_average ?? 7.8)"
-       self.categoryLabel.text = item.original_language?.uppercased()
+        self.categoryLabel.text = item.original_language?.uppercased()
         self.dateLabel.text = item.release_date
         self.minutesLabel.text = "\(item.popularity ?? 7)"
-
+        
     }
     
     func setupUI() {
