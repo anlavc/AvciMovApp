@@ -27,42 +27,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4os-7t-qBS">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="vhR-Em-CXU">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
-                                        <color key="barTintColor" name="bgColor"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <scopeButtonTitles>
-                                            <string>Title</string>
-                                            <string>Title</string>
-                                        </scopeButtonTitles>
-                                        <connections>
-                                            <outlet property="delegate" destination="d5K-3C-HM3" id="kL5-21-20x"/>
-                                        </connections>
-                                    </searchBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vyh-mN-oAA">
-                                        <rect key="frame" x="0.0" y="56" width="393" height="610"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="666"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="222" id="Cua-7I-2uA">
-                                                <rect key="frame" x="0.0" y="50" width="393" height="222"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cua-7I-2uA" id="Tpj-re-3jY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="222"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" name="bgColor"/>
                                 <constraints>
                                     <constraint firstItem="vyh-mN-oAA" firstAttribute="leading" secondItem="4os-7t-qBS" secondAttribute="leading" id="M54-zx-rG3"/>
-                                    <constraint firstItem="vhR-Em-CXU" firstAttribute="top" secondItem="4os-7t-qBS" secondAttribute="top" id="Qbi-rs-iOB"/>
-                                    <constraint firstAttribute="trailing" secondItem="vhR-Em-CXU" secondAttribute="trailing" id="UuT-Bo-trn"/>
-                                    <constraint firstItem="vhR-Em-CXU" firstAttribute="leading" secondItem="4os-7t-qBS" secondAttribute="leading" id="V4y-2K-Ift"/>
+                                    <constraint firstItem="vyh-mN-oAA" firstAttribute="top" secondItem="4os-7t-qBS" secondAttribute="top" id="Nc4-t3-au9"/>
                                     <constraint firstAttribute="trailing" secondItem="vyh-mN-oAA" secondAttribute="trailing" id="bQY-hX-ERZ"/>
                                     <constraint firstAttribute="bottom" secondItem="vyh-mN-oAA" secondAttribute="bottom" id="dQJ-iT-ble"/>
-                                    <constraint firstItem="vyh-mN-oAA" firstAttribute="top" secondItem="vhR-Em-CXU" secondAttribute="bottom" id="xcR-2w-Fd6"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -82,7 +57,6 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="searchBar" destination="vhR-Em-CXU" id="21K-R6-rjQ"/>
                         <outlet property="tableview" destination="vyh-mN-oAA" id="ugw-6g-tyc"/>
                     </connections>
                 </viewController>
@@ -323,7 +297,7 @@
                                         </subviews>
                                     </stackView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LwD-MA-rlg">
-                                        <rect key="frame" x="0.0" y="367" width="393" height="348"/>
+                                        <rect key="frame" x="0.0" y="367.33333333333326" width="393" height="347.66666666666674"/>
                                         <connections>
                                             <segue destination="4tm-kx-FgC" kind="embed" id="U8O-fq-duE"/>
                                         </connections>
@@ -596,6 +570,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="At5-eX-dy8">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="bgColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -919,6 +894,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ev6-i9-CuJ"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wOK-J6-w7H" firstAttribute="leading" secondItem="zMl-wM-xwU" secondAttribute="leading" id="7le-Bd-aVK"/>

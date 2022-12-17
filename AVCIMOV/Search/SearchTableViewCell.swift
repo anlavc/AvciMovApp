@@ -6,18 +6,20 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var imageview: UIImageView!
-    
     @IBOutlet weak var minutesLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var pointLabel: UILabel!
     @IBOutlet weak var headLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
      setupUI()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,6 +27,18 @@ class SearchTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    func configureCell(item: ResultMovie) {
+        
+        let image = NetworkHelper.shared.baseImageUrl + item.poster_path!
+        self.imageview.kf.setImage(with: URL(string: image))
+        self.headLabel.text = item.title
+        self.pointLabel.text = "\(item.vote_average ?? 7.8)"
+       self.categoryLabel.text = item.original_language?.uppercased()
+        self.dateLabel.text = item.release_date
+        self.minutesLabel.text = "\(item.popularity ?? 7)"
+
+    }
+    
     func setupUI() {
         imageview.layer.masksToBounds = false
         imageview.layer.borderColor = UIColor.black.cgColor
