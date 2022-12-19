@@ -8,8 +8,7 @@
 import UIKit
 
 class HomeVC: UIViewController {
-    var imageArray:[String] = ["1917img","ayla","duneposter","ersan","fury","holmes","thor"]
-    var numberArray:[String]=["1","2","3","4","5","6","7"]
+   
     let topCell = "HomeTopCell"
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -109,6 +108,12 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
 //        cell.textLabel.text = numberArray[indexPath.row]
         
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailsViewController
+        DetailVM.shared.movieID = MainVM.shared.topRated[indexPath.row].id
+        AboutViewController.detailAbout = MainVM.shared.topRated[indexPath.row].overview
+        navigationController?.pushViewController(vc, animated: true)
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         

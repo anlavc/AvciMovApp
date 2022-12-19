@@ -34,7 +34,13 @@ class SearchTableViewCell: UITableViewCell {
         self.headLabel.text = item.title
         self.pointLabel.text = "\(item.vote_average ?? 7.8)"
         self.categoryLabel.text = item.original_language?.uppercased()
-        self.dateLabel.text = item.release_date
+        
+
+        let date = String(item.release_date!)
+        
+        self.dateLabel.text = "\(date)"
+      
+     
         self.minutesLabel.text = "\(item.popularity ?? 7)"
         
     }
@@ -121,4 +127,26 @@ extension UITableView {
         
     }
     
+}
+//extension Date {
+//   func getFormattedDate(format: String) -> String {
+//        let dateformat = DateFormatter()
+//        dateformat.dateFormat = format
+//        return dateformat.string(from: self)
+//    }
+//}
+extension DateFormatter {
+    static let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = .current
+        dateFormatter.locale = .current
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        return dateFormatter
+    }()
+}
+extension String {
+    static func date(with date: Date) -> String {
+        return DateFormatter.dateFormatter.string(from: date)
+    }
 }

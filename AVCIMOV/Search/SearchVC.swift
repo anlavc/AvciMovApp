@@ -110,12 +110,12 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         return 135
         
     }
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
-    //        DetailVM.shared.movieID = SearchVM.shared.searchMovie[indexPath.row].id
-    //        ContainerViewAbout.detailAbout = SearchVM.shared.searchMovie[indexPath.row].overview
-    //        navigationController?.pushViewController(vc, animated: true)
-    //    }
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailsViewController
+            DetailVM.shared.movieID = SearchVM.shared.searchMovie[indexPath.row].id
+            AboutViewController.detailAbout = SearchVM.shared.searchMovie[indexPath.row].overview
+            navigationController?.pushViewController(vc, animated: true)
+        }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         let offsetY = scrollView.contentOffset.y

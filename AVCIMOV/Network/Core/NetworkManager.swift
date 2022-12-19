@@ -23,7 +23,6 @@ class NetworkManager {
                 if let _ = error {
                     completion(.failure(.generalError))
                 } else if let data = data {
-                    print(data)
                     self.handleResponse(data: data) { response in
                         completion(response)
                     }
