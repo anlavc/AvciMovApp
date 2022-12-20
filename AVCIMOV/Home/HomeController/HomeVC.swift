@@ -13,59 +13,29 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var detailIcon: UIBarButtonItem!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var topRatedLineine: UIView!
+    @IBOutlet weak var populerLime: UIView!
+    @IBOutlet weak var playingLine: UIView!
     @IBOutlet weak var container1: UIView!
     @IBOutlet weak var container2: UIView!
     @IBOutlet weak var container3: UIView!
-    @IBOutlet weak var container4: UIView!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
       
        setupUI()
     }
-    @IBAction func segmentedControlTapped(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-            UIView.animate(withDuration: 0.3, animations: {
-                self.container1.alpha = 1
-                self.container2.alpha = 0
-                self.container3.alpha = 0
-                self.container4.alpha = 0
-            })
-        } else  if sender.selectedSegmentIndex == 1 {
-            UIView.animate(withDuration: 0.3, animations: {
-                self.container1.alpha = 0
-                self.container2.alpha = 1
-                self.container3.alpha = 0
-                self.container4.alpha = 0
-            })
-        } else  if sender.selectedSegmentIndex == 2 {
-            UIView.animate(withDuration: 0.3, animations: {
-                self.container1.alpha = 0
-                self.container2.alpha = 0
-                self.container3.alpha = 1
-                self.container4.alpha = 0
-            })
-        } else  {
-            UIView.animate(withDuration: 0.3, animations: {
-                self.container1.alpha = 0
-                self.container2.alpha = 0
-                self.container3.alpha = 0
-                self.container4.alpha = 1
-            })
-            
-        }
-    }
-    
     private func setupUI() {
         navigationItem.title = "What do you want to watch?"
         collectionView.delegate = self
         collectionView.dataSource = self
-        segmentedControl.selectedSegmentIndex = 0
+        
         self.container2.alpha = 0
         self.container3.alpha = 0
-        self.container4.alpha = 0
+        self.topRatedLineine.alpha = 0
+        self.populerLime.alpha = 0
+        
         
         let nibCell=UINib(nibName: topCell, bundle: nil)
         collectionView.register(nibCell, forCellWithReuseIdentifier: "topCell")
@@ -83,10 +53,39 @@ class HomeVC: UIViewController {
         }
     }
     
-    @IBAction func detailIconClicked(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailVC")
-                                                
-                self.show(vc!, sender: nil)
+    @IBAction func homeTabClicked(_ sender: UIButton) {
+        if sender.currentTitle == "Now Playing" {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.container1.alpha = 1
+                self.container2.alpha = 0
+                self.container3.alpha = 0
+                self.playingLine.alpha = 1
+                self.topRatedLineine.alpha = 0
+                self.populerLime.alpha = 0
+                
+             
+            })
+        } else if sender.currentTitle == "Populer" {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.container1.alpha = 0
+                self.container2.alpha = 1
+                self.container3.alpha = 0
+                self.playingLine.alpha = 0
+                self.topRatedLineine.alpha = 0
+                self.populerLime.alpha = 1
+          
+             
+            })
+        } else if  sender.currentTitle == "Top Rated"  {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.container1.alpha = 0
+                self.container2.alpha = 0
+                self.container3.alpha = 1
+                self.playingLine.alpha = 0
+                self.topRatedLineine.alpha = 1
+                self.populerLime.alpha = 0
+            })
+        }
     }
     
 }

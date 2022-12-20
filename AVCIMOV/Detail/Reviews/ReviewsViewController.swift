@@ -1,29 +1,66 @@
+////
+////  ReviewsViewController.swift
+////  AVCIMOV
+////
+////  Created by Anıl AVCI on 18.12.2022.
+////
 //
-//  ReviewsViewController.swift
-//  AVCIMOV
+//import UIKit
 //
-//  Created by Anıl AVCI on 18.12.2022.
+//class ReviewsViewController: UIViewController {
+//    
+//    @IBOutlet weak var tableView: UITableView!
+//    let reviewCell = "ReviewCell"
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        setupUI()
+//    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        ReviewVM.shared.getReviews{ errorMessage in
+//            if let errorMessage = errorMessage {
+//                print("error \(errorMessage)")
+//            }
+//        }
+//    }
+//    private func setupUI() {
+//        tableView.delegate = self
+//        tableView.dataSource = self
+//        tableView.register(.init(nibName: reviewCell, bundle: nil), forCellReuseIdentifier: reviewCell)
+//        tableView.rowHeight  = UITableView.automaticDimension
+//        tableView.estimatedRowHeight = 100
+//        ReviewVM.shared.delegate = self
+//    }
+// 
 //
-
-import UIKit
-
-class ReviewsViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
+//}
+//
+//extension ReviewsViewController: UITableViewDelegate, UITableViewDataSource {
+//    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return ReviewVM.shared.reviews.count
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: reviewCell, for: indexPath) as! ReviewCell
+//        let item = ReviewVM.shared.reviews[indexPath.row]
+//        cell.configureCell(item: item)
+//        let backgroundView = UIView()
+//        backgroundView.backgroundColor = UIColor.clear
+//        cell.selectedBackgroundView = backgroundView
+//        return cell
+//    }
+//    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print("tapped review")
+//    }
+//}
+//
+//extension ReviewsViewController: ReviewDelegate {
+//    func didGetReviews(isDone: Bool) {
+//        if isDone {
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//        }
+//    }
+//}

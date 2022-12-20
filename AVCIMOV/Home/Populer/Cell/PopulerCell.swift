@@ -1,5 +1,5 @@
 //
-//  PopulerCell.swift
+//  UpcomingCell.swift
 //  AVCIMOV
 //
 //  Created by Anıl AVCI on 14.12.2022.
@@ -15,6 +15,7 @@ class PopulerCell: UICollectionViewCell {
         imageView.layer.masksToBounds = false
         imageView.layer.borderColor = UIColor.black.cgColor
         imageView.layer.cornerRadius = 20
-        imageView.clipsToBounds = true    }
+        imageView.clipsToBounds = true
+    }
 
 }
