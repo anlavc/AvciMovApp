@@ -19,8 +19,8 @@ class DetailVM {
     weak var delegate: DetailDelegate?
     private init () { }
     
-    //var favoritesArray = [Favorites]()
-   // let coreDataHelper = CoreDataHelper()
+    var favoritesArray = [Favorites]()
+    let coreDataHelper = CoreDataHelper()
     
     var movieID: Int?
     var movieDetail: MovieDetail?
@@ -42,16 +42,16 @@ class DetailVM {
         }
     }
     
-//    func fetchData() {
-//        favoritesArray = coreDataHelper.fetchData() ?? [Favorites]()
-//    }
-//
-//    func saveData(title: String, detail: String, movieId: String, image: String, imdb: String, origin: String) {
-//        coreDataHelper.saveData(title: title, detail: detail, movieId: movieId, image: image, imdb: imdb, origin: origin)
-//    }
-//
-//    func deleteData(index: String) {
-//        coreDataHelper.deleteData(index: index)
-//    }
+    func fetchData() {
+        favoritesArray = coreDataHelper.fetchData() ?? [Favorites]()
+    }
+
+    func saveData(title: String, detail: String, movieId: String, image: String, imdb: String, origin: String) {
+        coreDataHelper.saveData(title: title, detail: detail, movieId: movieId, image: image, imdb: imdb, origin: origin)
+    }
+
+    func deleteData(index: String) {
+        coreDataHelper.deleteData(index: index)
+    }
     
 }

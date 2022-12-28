@@ -27,7 +27,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4os-7t-qBS">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vyh-mN-oAA">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vyh-mN-oAA">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="666"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
@@ -53,6 +53,9 @@
                     <navigationItem key="navigationItem" title="Search" id="ATe-qJ-4xg">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="info.circle" catalog="system" id="X90-oY-C7s">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="infoButtonClicked:" destination="d5K-3C-HM3" id="Svu-r3-IGd"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -64,17 +67,32 @@
             </objects>
             <point key="canvasLocation" x="539.69465648854964" y="155.63380281690141"/>
         </scene>
-        <!--View Controller-->
+        <!--Watch ListVC-->
         <scene sceneID="K9o-NV-DqV">
             <objects>
-                <viewController id="ghU-fI-bs0" sceneMemberID="viewController">
+                <viewController id="ghU-fI-bs0" customClass="WatchListVC" customModule="AVCIMOV" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FUC-7X-96X">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="QsI-vI-Gmq">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Dur-jX-RP3"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" name="bgColor"/>
+                        <constraints>
+                            <constraint firstItem="QsI-vI-Gmq" firstAttribute="leading" secondItem="Dur-jX-RP3" secondAttribute="leading" id="D0b-kC-fls"/>
+                            <constraint firstItem="Dur-jX-RP3" firstAttribute="trailing" secondItem="QsI-vI-Gmq" secondAttribute="trailing" id="Jm4-6v-urY"/>
+                            <constraint firstItem="QsI-vI-Gmq" firstAttribute="top" secondItem="Dur-jX-RP3" secondAttribute="top" id="ZZD-6m-Sfi"/>
+                            <constraint firstItem="Dur-jX-RP3" firstAttribute="bottom" secondItem="QsI-vI-Gmq" secondAttribute="bottom" id="phT-cO-vSW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PY0-Bb-tAa"/>
+                    <connections>
+                        <outlet property="watchListTableView" destination="QsI-vI-Gmq" id="2di-OY-uld"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aJ-VE-tt9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -361,6 +379,9 @@
                         <barButtonItem key="backBarButtonItem" title="Geri" id="4Pw-ts-zT0"/>
                         <barButtonItem key="rightBarButtonItem" image="bookmark.fill" catalog="system" id="pEH-15-Dsh">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="nOs-Ta-utf" id="VPa-R2-AQT"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -396,7 +417,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYG-az-OLh">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="hGC-HY-2XR">
+                                    <searchBar userInteractionEnabled="NO" contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="hGC-HY-2XR">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                                         <color key="backgroundColor" name="bgColor"/>
                                         <color key="barTintColor" name="bgColor"/>
@@ -914,10 +935,10 @@
             </objects>
             <point key="canvasLocation" x="3397.709923664122" y="1003.5211267605634"/>
         </scene>
-        <!--Reviews View Controller-->
+        <!--Container View Reviews-->
         <scene sceneID="JVW-uC-eDc">
             <objects>
-                <viewController id="tql-Rf-Fix" customClass="ReviewsViewController" customModule="AVCIMOV" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tql-Rf-Fix" customClass="ContainerViewReviews" customModule="AVCIMOV" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zPf-7U-o07">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="348"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1013,9 +1034,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

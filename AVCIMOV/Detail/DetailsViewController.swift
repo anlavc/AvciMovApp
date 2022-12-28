@@ -30,6 +30,12 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var posterImageview: UIImageView!
     @IBOutlet weak var bannerImageview: UIImageView!
     var detail: MovieDetail?
+    var buttonChange: ButtonChange = .add
+    enum ButtonChange {
+        case add
+        case delete
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,13 +53,13 @@ class DetailsViewController: UIViewController {
             }
         }
         
-//        for i in DetailVM.shared.favoritesArray {
-//            if i.movieId == "\(DetailVM.shared.movieID!)" {
-//                addButton.setImage(UIImage.init(named: "remove"), for: .normal)
-//                buttonChange = .delete
-//                break
-//            }
-//        }
+        for i in DetailVM.shared.favoritesArray {
+            if i.movieId == "\(DetailVM.shared.movieID!)" {
+                bookmarkIcon.tintColor = UIColor.red
+                buttonChange = .delete
+                break
+            }
+        }
     }
     
     @IBAction func backButtonClicked(_ sender: UIBarButtonItem) {
@@ -108,7 +114,7 @@ class DetailsViewController: UIViewController {
         pointView.layer.cornerRadius = 5
         pointView.clipsToBounds = true
         DetailVM.shared.delegate = self
-        //DetailVM.shared.fetchData()
+        DetailVM.shared.fetchData()
         posterImageview.layer.masksToBounds = false
         
         posterImageview.layer.cornerRadius = 10
@@ -117,6 +123,21 @@ class DetailsViewController: UIViewController {
         //NavigationBackButtonSetting
         self.navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.topItem?.title = ""
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+        guard let detail = detail else { return }
+        if buttonChange == .add {
+            DetailVM.shared.saveData(title: detail.title!, detail: detail.overview!, movieId: "\(detail.id!)", image: detail.posterPath!, imdb: "\(detail.voteAverage!)", origin: detail.originalLanguage!)
+            
+            bookmarkIcon.tintColor = UIColor.red
+            buttonChange = .delete
+        } else {
+            
+            DetailVM.shared.deleteData(index: "\(detail.id!)")
+            bookmarkIcon.tintColor = UIColor.white
+            buttonChange = .add
+        }
     }
 }
 extension DetailsViewController: DetailDelegate {

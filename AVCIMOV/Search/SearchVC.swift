@@ -35,6 +35,23 @@ class SearchVC: UIViewController {
         tableview.reloadData()
         
     }
+    
+    @IBAction func infoButtonClicked(_ sender: UIBarButtonItem) {
+        
+               let alert = UIAlertController(title: "Info", message: "You can search for your favorite movies on this page, go to their details and add them to your watch list later.", preferredStyle: UIAlertController.Style.alert)
+               let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { UIAlertAction in
+               }
+               alert.addAction(okButton)
+               self.present(alert, animated: true, completion: nil)
+               
+    }
+    func makeAlert(titleInput: String, messageInput:String) {
+         let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
+         let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+         alert.addAction(okButton)
+         self.present(alert, animated: true, completion: nil)
+     }
+     
     private func configureSearchController() {
         
         searchController.loadViewIfNeeded()
