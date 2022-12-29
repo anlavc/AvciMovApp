@@ -1,10 +1,9 @@
 //
-//  CastModel.swift
-//  Movieva
+//  FavoriteCore.swift
+//  AVCIMOV
 //
-//  Created by Mehmet Kerim ÖZEK on 9.12.2022.
+//  Created by Anıl AVCI on 25.12.2022.
 //
-
 import Foundation
 
 // MARK: - MovieCast

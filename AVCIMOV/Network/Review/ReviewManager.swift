@@ -1,10 +1,9 @@
 //
-//  ReviewManager.swift
-//  Movieva
+//  FavoriteCore.swift
+//  AVCIMOV
 //
-//  Created by Mehmet Kerim ÖZEK on 6.12.2022.
+//  Created by Anıl AVCI on 25.12.2022.
 //
-
 import Foundation
 
 class ReviewManager {
